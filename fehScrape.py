@@ -1,20 +1,21 @@
-#Simple web scrape with BeautifulSoup
+# Web scraper using BeautifulSoup
+# mauduong
+
 from urllib.request import urlopen
 from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
-from datetime import datetime
 import csv
 import requests
+import re
 
 dataArray = []
 
 def getRequest(url):
-	try:
+	try: 
 		query_page = url
 		request = requests.get(query_page)
-		displayStatus(request)
 		if (request.status_code == 200):
 			page = request.text
 			soup = BeautifulSoup(page, 'html.parser')
@@ -23,40 +24,83 @@ def getRequest(url):
 			log_error("Error during GET request: {0}".format(request))
 	except RequestException as e:
 		log_error("Error during {0} : {1}\n".format(url, str(e)))
-
+	
 def scrapeURL(soup, url):
-	print('Attempting scrape - {0}'.format(url))
+	heroNameUpper = url.replace('https://fireemblem.gamepress.gg/hero/', '').upper()
+	print('Attempting scrape - {0}'.format(heroNameUpper))
 	
-	for name in soup.find('table', attrs={'id': 'hero-details-table'}).find('span'):
-		title = name.findNext('span').get_text().replace('-', '').strip()
-		
-	dataArray.append(name)
-	dataArray.append(title)
-	
-	for stats in soup.find_all('span', attrs={'class': 'stat-text'}):
-		formattedStats = stats.get_text()
-		dataArray.append(formattedStats)
-	
-	dataArray.append('\n')
-	try:
-		csvWrite(dataArray)
+	try: 
+		getName(soup)
+		getStats(soup)
+		getSkills(soup)
+		dataArray.append('\n')
+		try:
+			csvWrite(dataArray)
+		except IOError as e:
+			log_error("Close the existing csv file\n")
+			
 	except Exception as e:
-		log_error("Error during writing CSV {0} : {1}\n".format(dataArray, str(e)))
-	
-	print('Writing to csv file\n')
-	
+		log_error("Error during scraping {0} : {1}\n".format(url, str(e)))
+		
+# Get a single Hero's name and title
+def getName(soup):
+	try: 
+		for name in soup.find('table', attrs={'id': 'hero-details-table'}).find('span'):
+			title = name.findNext('span').get_text().replace('-', '').strip()
+			
+		dataArray.append(name)
+		dataArray.append(title)
+		
+	except Exception as e:
+		log_error("Error during name | title scraping {0} : {1}\n".format(soup, str(e)))
+
+# Function to gather NEUTRAL IV stats of the specified Hero
+def getStats(soup):
+	try:
+		for headerStats in soup.find_all('div', attrs={'class': 'header-stats'}):
+			head = headerStats.get_text().strip()
+			dataArray.append(head)
+	except Exception as e:
+		log_error("Error during IV variation scraping {0} : {1}\n".format(soup, str(e)))
+
+def getSkills(soup):
+	try:
+		# Get all available weapons of the specified Hero
+		for weapon in soup.find_all('td', attrs={'headers': 'view-title-table-column', 'class': 
+		'views-field views-field-title views-field-field-weapon-effect views-field-field-star-defaults views-field-field-stars views-field-description__value'}):
+			weaponName = weapon.get_text().strip()
+			weaponDesc = "WEAPON: " + weaponName
+			dataArray.append(weaponDesc)
+		
+		# Get all available specials of the specified Hero
+		for special in soup.find_all('td', attrs={'headers': 'view-title-table-column--3', 'class':
+		'views-field views-field-title views-field-field-special-skill-effect views-field-field-star-defaults views-field-field-stars views-field-description__value'}):
+			specialName = special.get_text().strip()
+			specialDesc = "SPECIAL: " + specialName
+			dataArray.append(specialDesc)
+		
+		# Get all available passive A, B, C skills of the specified Hero
+		for passive in soup.find_all('td', attrs={'headers': 'view-field-passive-skill-icon-table-column', 'class': 
+		'views-field views-field-field-passive-skill-icon views-field-title views-field-field-passive-skills-effect views-field-field-stars views-field-description__value'}):
+			passiveName = passive.get_text().strip()
+			passiveDesc = passiveName
+			dataArray.append(passiveDesc)
+			
+	except Exception as e:
+		log_error("Error during Weapon scraping {0} : {1}\n".format(soup, str(e)))
+
 def csvWrite(dataArray):
 	# Save data to csv for later retrieval
-	with open('fehcsv.csv', 'a', newline='') as csvfile:
+	with open('fehcsv.csv', 'w', newline='', encoding='utf-8') as csvfile:
 		writer = csv.writer(csvfile)
 		for i in dataArray:
 			writer.writerow([i])
 			
-def displayStatus(request):
+"""def displayStatus(request):
 	print('Displaying HTTP Request')
 	print(request.status_code)
 	print(request.headers['content-type'])
-	print('\n')
+	print('\n')"""
 	
 # Prints any exception that arises
 def log_error(e):
