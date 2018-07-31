@@ -23,7 +23,11 @@ def getRequest(url):
 		else:
 			log_error("Error during GET request: {0}".format(request))
 	except RequestException as e:
-		log_error("Error during {0} : {1}\n".format(url, str(e)))
+		log_error("RequestException during {0} : {1}\n".format(url, str(e)))
+	except HTMLParseError as e:
+		log_error("HTMLParseError during {0} : {1}\n".format(url, str(e)))
+	except ImportError as e:
+		log_error("ImportError during {0} : {1}\n".format(url, str(e)))
 	
 def scrapeURL(soup, url):
 	heroNameUpper = url.replace('https://fireemblem.gamepress.gg/hero/', '').upper()
@@ -37,8 +41,7 @@ def scrapeURL(soup, url):
 		try:
 			csvWrite(dataArray)
 		except IOError as e:
-			log_error("Close the existing csv file\n")
-			
+			log_error("IO Error during {0}\n".format(str(e)))
 	except Exception as e:
 		log_error("Error during scraping {0} : {1}\n".format(url, str(e)))
 		
@@ -50,9 +53,8 @@ def getName(soup):
 			
 		dataArray.append(name)
 		dataArray.append(title)
-		
 	except Exception as e:
-		log_error("Error during name | title scraping {0} : {1}\n".format(soup, str(e)))
+		log_error("Error during name and title scraping {0} : {1}\n".format(soup, str(e)))
 
 # Function to gather NEUTRAL IV stats of the specified Hero
 def getStats(soup):
@@ -71,7 +73,14 @@ def getSkills(soup):
 			weaponName = weapon.get_text().strip()
 			weaponDesc = "WEAPON: " + weaponName
 			dataArray.append(weaponDesc)
-		
+			
+		# Get all available support skills
+		for assist in soup.find_all('td', attrs={'headers': 'view-title-table-column--3', 'class': 
+		'views-field views-field-title views-field-field-command-skill-effect views-field-field-star-defaults views-field-field-stars'}):
+			assistName = assist.get_text().strip()
+			assistDesc = "SUPPORT: " + assistName
+			dataArray.append(assistDesc)
+			
 		# Get all available specials of the specified Hero
 		for special in soup.find_all('td', attrs={'headers': 'view-title-table-column--3', 'class':
 		'views-field views-field-title views-field-field-special-skill-effect views-field-field-star-defaults views-field-field-stars views-field-description__value'}):
@@ -87,7 +96,7 @@ def getSkills(soup):
 			dataArray.append(passiveDesc)
 			
 	except Exception as e:
-		log_error("Error during Weapon scraping {0} : {1}\n".format(soup, str(e)))
+		log_error("Error during Skills scraping {0} : {1}\n".format(soup, str(e)))
 
 def csvWrite(dataArray):
 	# Save data to csv for later retrieval
