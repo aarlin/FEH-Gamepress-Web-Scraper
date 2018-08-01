@@ -25,4 +25,4 @@ Currently scrapes (if applicable):
   - SP
   - Slot type (A, B, C)
 
-*Note: csv Output is sometimes broken when scraping individuals*
+*Note: csv output is sometimes broken when scraping individuals*
