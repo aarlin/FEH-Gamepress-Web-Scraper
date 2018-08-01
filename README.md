@@ -1,11 +1,28 @@
 # FEH Gamepress Web Scraper
 A basic web scraper script that parses data from fireemblem.gamepress.gg
 
-Currently scrapes:
+Currently scrapes (if applicable):
 - Hero Name
 - Hero Title
-- Hero Stats {HP, ATK, SPD, DEF, RES} at Neutral
+- Hero Base Stat Total
+- Hero Stats 
+  - HP
+  - ATK
+  - SPD
+  - DEF
+  - RES
 - Default Weapons
-- Default Supportive skills if available
-- Default Specials if available
-- Default Passives {A, B, C} if available
+  - SP
+  - Range
+  - Might
+- Default Supportive skills
+  - Range
+  - SP
+- Default Specials
+  - SP
+  - Turns required
+- Default Passives
+  - SP
+  - Slot type (A, B, C)
+
+*Note: csv Output is sometimes broken when scraping individuals*
