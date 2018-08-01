@@ -23,30 +23,14 @@ heroArray = ['abel','alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur
 			'summer-frederick', 'summer-frederick', 'summer-gaius', 'summer-innes', 'summer-leo', 'summer-linde', 'summer-noire', 'summer-robin-f', 'summer-takumi', 'summer-tana',
 			'summer-tiki-adult', 'summer-tiki-young', 'summer-xander', 'tailtiu', 'takumi', 'tana', 'tharja', 'tiki-adult', 'tiki-young', 'titania', 'tobin', 'ursula', 'valter', 'virion',
 			'walhart', 'winter-chrom', 'winter-lissa', 'winter-robin', 'winter-tharja', 'wrys', 'xander', 'zelgius', 'zephiel']
+			
+#heroArray = ['alfonse', 'sharena', 'anna']
 
 url = "https://fireemblem.gamepress.gg/hero/"
 
-
-#while not emptyPrompt:
 for i, value in enumerate(heroArray):
 	try:
 		concatURL = url + value;
 		getRequest(concatURL)
 	except IndexError as e:
 		log_error("Error during heroArray value - {0} : {1}".format(value, str(e)))
-
-"""
-exitPrompt = "exit"
-while True:
-	print("Type in \"exit\" to quit without quotation marks")
-	userInput = input("Enter a Hero's name: ").lower()
-	
-	# Terrible code but it works
-	if userInput == "" or userInput == " " or userInput == exitPrompt:
-		print("You have exited the script")
-		break
-	else:
-		url = ("https://fireemblem.gamepress.gg/hero/" + userInput)
-		
-	getRequest(url)
-"""
