@@ -49,14 +49,14 @@ def scrapeURL(soup, url):
 # Get a single Hero's name and title
 def getName(soup):
 	try: 
-		#origin = soup.find('div', attrs={'class': 'field__item'}).get_text().strip()
+		origin = soup.find('div', {'class': 'field field--name-field-origin field--type-entity-reference field--label-hidden field__items'})
+		origin = origin.findNext('div', attrs={'class': 'field__item'}).get_text()
 		for name in soup.find('table', attrs={'id': 'hero-details-table'}).find('span'):
 			title = name.findNext('span').get_text().replace('-', '').strip()
 			
 		dataArray.append(name)
 		dataArray.append(title)
-		#dataArray.append(origin)
-		dataArray.append("\n")
+		dataArray.append("Origin: " + origin + '\n')
 	except Exception as e:
 		log_error("Error during name and title scraping {0} : {1}\n".format(soup, str(e)))
 
@@ -121,12 +121,6 @@ def csvWrite(dataArray):
 		for i in dataArray:
 			writer.writerow([i])
 			
-"""def displayStatus(request):
-	print('Displaying HTTP Request')
-	print(request.status_code)
-	print(request.headers['content-type'])
-	print('\n')"""
-	
 # Prints any exception that arises
 def log_error(e):
 	print(e)
