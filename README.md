@@ -4,6 +4,7 @@ A basic web scraper script that parses data from fireemblem.gamepress.gg
 Currently scrapes (if applicable):
 - Hero Name
 - Hero Title
+- Hero Game origin
 - Hero Base Stat Total
 - Hero Stats 
   - HP
