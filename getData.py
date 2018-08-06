@@ -2,8 +2,13 @@
 # mauduong
 from fehScrape import getRequest
 from fehScrape import log_error
+from requests import get
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
 import requests
+import re
 
+"""
 heroArray = ['abel','alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur', 'arvis', 'athena', 'ayra', 'azama', 'azura', 'barst', 'bartre', 'berkut', 'beruka', 'black-knight',
 	'boey', 'brave-ike', 'brave-lucina', 'brave-lyn', 'brave-roy', 'bridal-caeda', 'bridal-charlotte', 'bridal-cordelia', 'bridal-lyn', 'bridal-ninian', 'bridal-sanaki',
 	'bridal-tharja', 'caeda', 'cain', 'camilla', 'camus', 'canas', 'catria', 'cecilia', 'celica', 'cherche', 'chrom', 'clair', 'clarine', 'clarisse', 'clive', 'cordelia',
@@ -22,10 +27,34 @@ heroArray = ['abel','alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur
 	'spring-kagero', 'spring-lucina', 'spring-sharena', 'spring-xander', 'stahl', 'subaki', 'sully', 'sumia', 'summer-camilla', 'summer-cordelia', 'summer-corrin-f', 'summer-elise',
 	'summer-frederick', 'summer-frederick', 'summer-gaius', 'summer-innes', 'summer-leo', 'summer-linde', 'summer-noire', 'summer-robin-f', 'summer-takumi', 'summer-tana',
 	'summer-tiki-adult', 'summer-tiki-young', 'summer-xander', 'tailtiu', 'takumi', 'tana', 'tharja', 'tiki-adult', 'tiki-young', 'titania', 'tobin', 'ursula', 'valter', 'virion',
-	'walhart', 'winter-chrom', 'winter-lissa', 'winter-robin', 'winter-tharja', 'wrys', 'xander', 'zelgius', 'zephiel']
+	'walhart', 'winter-chrom', 'winter-lissa', 'winter-robin', 'winter-tharja', 'wrys', 'xander', 'zelgius', 'zephiel']"""
 		
 #heroArray = ['alfonse', 'sharena', 'anna']
 
+heroArray = []
+
+def getIndividualHeroes(heroArray):
+	try:
+		query_page = "https://fireemblem.gamepress.gg/heroes"
+		request = requests.get(query_page)
+		if (request.status_code == 200):
+			page = request.text
+			soup = BeautifulSoup(page, 'html.parser')
+			#for heroTable in soup.find('table', attrs={'id': 'hero-table-parent', 'class': 'view-hero'}).find('td'): #href=re.compile('/hero/'))
+			#	heroLink = heroTable.findNext('a').get_text().strip()
+			#	print(heroLink)
+		
+			for heroLink in soup.find_all('a', href=True, text='/hero/'):
+				heroArray.append(heroLink)
+				print(heroLink)
+			print(heroArray)
+	except Exception as e:
+		log_error("Something happened while collecting each hero! {0}".format(str(e)))
+
+print('get')
+getIndividualHeroes(heroArray)
+print('fin')
+"""
 url = "https://fireemblem.gamepress.gg/hero/"
 
 for i, value in enumerate(heroArray):
@@ -33,4 +62,4 @@ for i, value in enumerate(heroArray):
 		concatURL = url + value;
 		getRequest(concatURL)
 	except IndexError as e:
-		log_error("Error during heroArray value - {0} : {1}".format(value, str(e)))
+		log_error("Error during heroArray value - {0} : {1}".format(value, str(e)))"""
