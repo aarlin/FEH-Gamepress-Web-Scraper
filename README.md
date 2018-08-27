@@ -27,3 +27,7 @@ Currently scrapes (if applicable):
   - Slot type (A, B, C)
 
 *Note: csv output is sometimes broken when scraping individuals*
+
+
+Attempting to create:
+![FEH ERD image](https://github.com/mauduong/FEH-Gamepress-Web-Scraper/blob/master/FEH%20database.png)
