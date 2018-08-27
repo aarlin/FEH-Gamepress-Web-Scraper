@@ -10,8 +10,8 @@ import re
 
 
 heroArray = ['abel','alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur', 'arvis', 'athena', 'ayra', 'azama', 'azura', 
-	'barst', 'bartre', 'berkut', 'beruka', 'black-knight', 'boey', 'brave-ike', 'brave-lucina', 'brave-lyn', 'brave-roy', 'bridal-caeda', 'bridal-charlotte', 'bridal-cordelia', 
-	'bridal-lyn', 'bridal-ninian', 'bridal-sanaki', 'bridal-tharja', 
+	'barst', 'bartre', 'berkut', 'beruka', 'black-knight', 'boey', 'brave-celica', 'brave-ephraim', 'brave-hector', 'brave-ike', 'brave-lucina', 'brave-lyn', 'brave-roy', 
+	'brave-veronica', 'bridal-caeda', 'bridal-charlotte', 'bridal-cordelia', 'bridal-lyn', 'bridal-ninian', 'bridal-sanaki', 'bridal-tharja', 
 	'caeda', 'cain', 'camilla', 'camus', 'canas', 'catria', 'cecilia', 'celica', 'cherche', 'chrom', 'clair', 'clarine', 'clarisse', 'clive', 'cordelia', 'corrin-f', 'corrin-m', 
 	'deirdre', 'delthea', 'donnel', 'dorcas', 'draug', 
 	'effie', 'eirika', 'eirika-sm', 'eldigan', 'elincia', 'elise', 'eliwood', 'eliwood-la', 'ephraim', 'est', 'chrome', 
