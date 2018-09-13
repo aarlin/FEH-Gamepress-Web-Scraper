@@ -16,6 +16,11 @@ Currently scrapes (if applicable):
   - SP
   - Range
   - Might
+- Upgradeable Weapons
+  - HP
+  - SP
+  - Range
+  - Might
 - Default Supportive skills
   - Range
   - SP
