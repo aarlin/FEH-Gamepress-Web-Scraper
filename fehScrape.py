@@ -74,7 +74,7 @@ def getStats(soup):
 
 def getSkills(soup):
 	try:
-		# Get all available weapons of the specified Hero
+		# Weapons available for a specific Hero
 		for weapon in soup.find_all('td', attrs={'headers': 'view-title-table-column', 'class': 
 		'views-field views-field-title views-field-field-weapon-effect views-field-field-star-defaults views-field-field-stars views-field-description__value'}):
 			weaponSP = weapon.findNext('td', {'headers': 'view-field-weapon-skills-sp-cost-table-column'}).get_text()
@@ -83,6 +83,16 @@ def getSkills(soup):
 			weaponName = weapon.get_text().strip()
 			weaponDesc = "WEAPON: " + weaponName + " SP: " + weaponSP + " RNG: " + weaponRNG + " MIGHT: " + weaponMT
 			dataArray.append(weaponDesc)
+			
+		# Weapon upgrades available for a specific Hero
+		for upgrade in soup.find_all('td', attrs={'headers': 'view-title-table-column--2', 'class': 'views-field views-field-title views-field-field-weapon-effect'}):
+			weaponUpgradeName = upgrade.get_text().strip()
+			weaponUpgradeHP = upgrade.findNext('td', {'headers': 'view-field-refinery-hp-bonus-table-column'}).get_text()
+			weaponUpgradeSP = upgrade.findNext('td', {'headers': 'view-field-weapon-skills-sp-cost-table-column--2'}).get_text()
+			weaponUpgradeRNG = upgrade.findNext('td', {'headers': 'view-field-weapon-range-table-column--2'}).get_text()
+			weaponUpgradeMT = upgrade.findNext('td', {'headers': 'view-field-weapon-power-table-column--2'}).get_text()
+			weaponUpgradeDesc = "UPGRADES: " + weaponUpgradeName + " HP: " + weaponUpgradeHP + " SP: " + weaponUpgradeSP + " RNG: " + weaponUpgradeRNG + " MIGHT: " + weaponUpgradeMT
+			dataArray.append(weaponUpgradeDesc)
 		
 		# Get all available support skills
 		for assist in soup.find_all('td', attrs={'headers': 'view-title-table-column--3', 'class': 
@@ -93,7 +103,7 @@ def getSkills(soup):
 			assistDesc = "SUPPORT: " + assistName + " RNG: " + assistRNG + " SP: " + assistSP
 			dataArray.append(assistDesc)
 		
-		# Get all available specials of the specified Hero
+		# Available default specials for a specific Hero
 		for special in soup.find_all('td', attrs={'headers': 'view-title-table-column--3', 'class':
 		'views-field views-field-title views-field-field-special-skill-effect views-field-field-star-defaults views-field-field-stars views-field-description__value'}):
 			specialSP = special.findNext('td', {'headers': 'view-field-special-skills-sp-cost-table-column'}).get_text()
@@ -102,7 +112,7 @@ def getSkills(soup):
 			specialDesc = "SPECIAL: " + specialName + " SP: " + specialSP + " TURNS: " + specialTurns
 			dataArray.append(specialDesc)
 		
-		# Get all available passive A, B, C skills of the specified Hero
+		# All available passive A, B, C skills for a specific Hero
 		for passive in soup.find_all('td', attrs={'headers': 'view-field-passive-skill-icon-table-column', 'class': 
 		'views-field views-field-field-passive-skill-icon views-field-title views-field-field-passive-skills-effect views-field-field-stars views-field-description__value'}):
 			passiveSP = passive.findNext('td', {'headers': 'view-field-passive-skills-sp-cost-table-column'}).get_text()
@@ -117,7 +127,8 @@ def getSkills(soup):
 def csvWrite(dataArray):
 	# Save data to csv for later retrieval
 	with open('fehcsv.csv', 'w', newline='', encoding='utf-8') as csvfile:
-		writer = csv.writer(csvfile)
+		writer = csv.writer(csvfile, lineterminator='\n')
+		#writer.writerow(dataArray)
 		for i in dataArray:
 			writer.writerow([i])
 			
