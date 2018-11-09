@@ -9,7 +9,7 @@ import requests
 import re
 
 
-heroArray = ['abel','alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur', 'arvis', 'athena', 'ayra', 'azama', 'azura', 
+heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur', 'arvis', 'athena', 'ayra', 'azama', 'azura', 
 	'barst', 'bartre', 'berkut', 'beruka', 'black-knight', 'boey', 'brave-celica', 'brave-ephraim', 'brave-hector', 'brave-ike', 'brave-lucina', 'brave-lyn', 'brave-roy', 
 	'brave-veronica', 'bridal-caeda', 'bridal-charlotte', 'bridal-cordelia', 'bridal-lyn', 'bridal-ninian', 'bridal-sanaki', 'bridal-tharja', 
 	'caeda', 'cain', 'camilla', 'camus', 'canas', 'catria', 'cecilia', 'celica', 'cherche', 'chrom', 'clair', 'clarine', 'clarisse', 'clive', 'cordelia', 'corrin-f', 'corrin-m', 
@@ -27,7 +27,7 @@ heroArray = ['abel','alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur
 	'legendary-eirika', 'legendary-ephraim', 'legendary-hector', 'legendary-ike', 'legendary-lucina', 'legendary-lyn', 'legendary-math', 'legendary-robin-f', 'legendary-ryoma', 'legendary-tiki-young',
 	'legion', 'leif', 'lene', 'leo', 'leon', 'lewyn', 'libra', 'lilina', 'lilina-la', 'linde', 'linus', 'lissa', 'lloyd', 'loki', 'lonqu', 'lucina', 'lucius', 'lukas', 'luke', 'lute', 'lyn', 'lyn-la', 
 	'lyon', 
-	'mae', 'maria', 'maribelle', 'marisa', 'marth', 'masked-marth', 'mathilda', 'matthew', 'merric', 'mia', 'micaiah', 'michalis', 'minerva', 'mist', 'morgan-f', 'morgan-m', 'myrrh', 
+	'mae', 'maria', 'maribelle', 'marisa', 'marth', 'masked-marth', 'mathilda', 'matthew', 'merric', 'mia', 'micaiah', 'michalis', 'mikoto', 'minerva', 'mist', 'morgan-f', 'morgan-m', 'myrrh', 
 	'nanna', 'narcian', 'navarre', 'nephenee', 'new-year-azura', 'new-year-camilla', 'new-year-corrin-m', 'new-year-takumi', 'niles', 'nina', 'ninian', 'nino', 'nino-sf', 'nowi', 
 	'oboro', 'odin', 'ogma', 'oliver', 'olivia', 'olivia-yt', 'olwen', 'olwen-wt', 'ophelia', 'oscar', 'owain',
 	'palla', 'performing-azura', 'performing-inigo', 'performing-olivia', 'performing-shigure', 'peri', 'priscilla', 
