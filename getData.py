@@ -36,12 +36,13 @@ heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'al
 	'saber', 'saias', 'saizo', 'sakura', 'sanaki', 'selena', 'seliph', 'serra', 'seth', 'setsuna', 'shanna', 'sharena', 'sheena', 'shigure', 'shiro', 'siegbert', 'silas', 'silvia', 'soleil', 
 	'sonya', 'sophia', 'soren', 'sothe', 'spring-alfonse', 'spring-camilla', 'spring-catria', 'spring-chrom', 'spring-kagero', 'spring-lucina', 'spring-sharena', 'spring-xander', 'stahl', 
 	'subaki', 'sully', 'sumia', 'summer-camilla', 'summer-cordelia', 'summer-corrin-f', 'summer-elise', 'summer-frederick', 'summer-frederick', 'summer-gaius', 'summer-innes', 
-	'summer-leo', 'summer-linde', 'summer-noire', 'summer-robin-f', 'summer-takumi', 'summer-tana', 'summer-tiki-adult', 'summer-tiki-young', 'summer-xander', 
+	'summer-leo', 'summer-linde', 'summer-noire', 'summer-robin-f', 'summer-takumi', 'summer-tana', 'summer-tiki-adult', 'summer-tiki-young', 'summer-xander', 'surtr',
 	'tailtiu', 'takumi', 'tana', 'tharja', 'tiki-adult', 'tiki-young', 'titania', 'tobin', 
 	'ursula', 
 	'valter', 'virion',
 	'walhart', 'winter-chrom', 'winter-lissa', 'winter-robin', 'winter-tharja', 'wrys', 
-	'xander', 
+	'xander',
+	'yglr',
 	'zelgius', 'zephiel']
 		
 #heroArray = ['alfonse', 'sharena', 'anna']
