@@ -18,7 +18,7 @@ heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'al
 	'fae', 'fallen-celica', 'fallen-hardin', 'fallen-robin-m', 'fallen-takumi', 'faye', 'felicia', 'finn', 'fir', 'fjorm', 'flora', 'florina', 'frederick', 
 	'gaius', 'genny', 'gerome', 'gordin', 'gray', 'groom-marth', 'gunnthra', 'gunter', 'gwendolyn', 
 	'halloween-henry', 'halloween-jakob', 'halloween-kagero', 'halloween-mia', 'halloween-myrrh', 'halloween-niles', 'halloween-nowi', 'halloween-sakura', 
-	'hana', 'hawkeye', 'hector', 'hector-la', 'helbindi', 'henry', 'hinata', 'hinoka', 'hinoka-wf',
+	'hana', 'hawkeye', 'hector', 'hector-la', 'helbindi', 'henry', 'hinata', 'hinoka', 'hinoka-wf', 'hrid',
 	'hoshidan-summer-xander', 'hoshidan-summer-elincia', 'hoshidan-summer-ryoma', 'hoshidan-summer-micaiah',
 	'ike', 'innes', 'ishtar', 
 	'jaffar', 'jagen', 'jakob', 'jeorge', 'joshua', 'julia', 'julius',
