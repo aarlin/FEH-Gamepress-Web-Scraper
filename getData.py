@@ -9,19 +9,19 @@ import requests
 import re
 
 
-heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur', 'arvis', 'athena', 'ayra', 'azama', 'azura', 'azura-young'
+heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur', 'arvis', 'athena', 'aversa', 'ayra', 'azama', 'azura', 'azura-young'
 	'barst', 'bartre', 'berkut', 'beruka', 'black-knight', 'boey', 'brave-celica', 'brave-ephraim', 'brave-hector', 'brave-ike', 'brave-lucina', 'brave-lyn', 'brave-roy', 
 	'brave-veronica', 'bridal-caeda', 'bridal-charlotte', 'bridal-cordelia', 'bridal-lyn', 'bridal-ninian', 'bridal-sanaki', 'bridal-tharja', 
 	'caeda', 'cain', 'camilla', 'camus', 'canas', 'catria', 'cecilia', 'celica', 'cherche', 'chrom', 'clair', 'clarine', 'clarisse', 'clive', 'cordelia', 'corrin-f', 'corrin-m', 
 	'deirdre', 'delthea', 'donnel', 'dorcas', 'draug', 
 	'effie', 'eirika', 'eirika-sm', 'eldigan', 'elincia', 'elise', 'eliwood', 'eliwood-la', 'ephraim', 'est', 'chrome', 
 	'fae', 'fallen-celica', 'fallen-hardin', 'fallen-robin-m', 'fallen-takumi', 'faye', 'felicia', 'finn', 'fir', 'fjorm', 'flora', 'florina', 'frederick', 
-	'gaius', 'genny', 'gerome', 'gordin', 'gray', 'groom-marth', 'gunnthra', 'gunter', 'gwendolyn', 
+	'gaius', 'garon', 'genny', 'gerome', 'gharnef', 'gordin', 'gray', 'groom-marth', 'gunnthra', 'gunter', 'gwendolyn', 
 	'halloween-henry', 'halloween-jakob', 'halloween-kagero', 'halloween-mia', 'halloween-myrrh', 'halloween-niles', 'halloween-nowi', 'halloween-sakura', 
 	'hana', 'hawkeye', 'hector', 'hector-la', 'helbindi', 'henry', 'hinata', 'hinoka', 'hinoka-wf', 'hrid',
 	'hoshidan-summer-xander', 'hoshidan-summer-elincia', 'hoshidan-summer-ryoma', 'hoshidan-summer-micaiah',
 	'ike', 'innes', 'ishtar', 
-	'jaffar', 'jagen', 'jakob', 'jeorge', 'joshua', 'julia', 'julius',
+	'jaffar', 'jagen', 'jakob', 'jamke', 'jeorge', 'joshua', 'julia', 'julius',
 	'kagero', 'kana-f', 'kana-m', 'karel', 'karla', 'katarina', 'kaze', 'klein', 'kliff', 
 	'lachesis', 'laegjarn', 'laevatein', 'larachel', 'laslow', 'legault', 
 	'legendary-eirika', 'legendary-ephraim', 'legendary-hector', 'legendary-ike', 'legendary-lucina', 'legendary-lyn', 'legendary-math', 'legendary-robin-f', 'legendary-ryoma', 'legendary-tiki-young',
