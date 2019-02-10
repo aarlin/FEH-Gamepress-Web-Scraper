@@ -43,6 +43,7 @@ heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'al
 	'tailtiu', 'takumi', 'tana', 'tharja', 'tibarn', 'tiki-adult', 'tiki-young', 'titania', 'tobin', 
 	'ursula', 
 	'valter', 'virion',
+	'valentines-greil', 'valentines-ike', 'valentines-mist', 'valentines-soren', 'valentines-titania',
 	'walhart', 'winter-cecilia', 'winter-chrom', 'winter-eirika', 'winter-ephraim', 'winter-fae', 'winter-lissa', 'winter-robin', 'winter-tharja', 'wrys', 
 	'xander',
 	'yglr',
