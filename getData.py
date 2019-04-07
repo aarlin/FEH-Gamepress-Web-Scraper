@@ -46,7 +46,7 @@ heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'al
 	'valentines-greil', 'valentines-ike', 'valentines-mist', 'valentines-soren', 'valentines-titania',
 	'walhart', 'winter-cecilia', 'winter-chrom', 'winter-eirika', 'winter-ephraim', 'winter-fae', 'winter-lissa', 'winter-robin', 'winter-tharja', 'wrys', 
 	'xander',
-	'yglr',
+	'yglr', 'yune',
 	'zelgius', 'zephiel']
 		
 #heroArray = ['alfonse', 'sharena', 'anna']
