@@ -10,9 +10,10 @@ import re
 
 
 heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur', 'arvis', 'athena', 'aversa', 'ayra', 'azama', 'azura', 'azura-young'
-	'barst', 'bartre', 'berkut', 'beruka', 'black-knight', 'boey', 'brave-celica', 'brave-ephraim', 'brave-hector', 'brave-ike', 'brave-lucina', 'brave-lyn', 'brave-roy', 
+	'barst', 'bartre', 'berkut', 'beruka', 'black-knight', 'boey', 'brady',
+        'brave-celica', 'brave-ephraim', 'brave-hector', 'brave-ike', 'brave-lucina', 'brave-lyn', 'brave-roy', 
 	'brave-veronica', 'bridal-caeda', 'bridal-charlotte', 'bridal-cordelia', 'bridal-fjorm', 'bridal-louise', 'bridal-lyn', 'bridal-ninian', 'bridal-sanaki', 'bridal-sigrun', 'bridal-tanith', 'bridal-tharja', 
-	'caeda', 'cain', 'caineghis', 'camilla', 'camus', 'canas', 'catria', 'cecilia', 'celica', 'cherche', 'chrom', 'clair', 'clarine', 'clarisse', 'clive', 'cordelia', 'corrin-f', 'corrin-m', 
+	'caeda', 'cain', 'caineghis', 'camilla', 'camus', 'canas', 'catria', 'cecilia', 'celica', 'cherche', 'chrom', 'clair', 'clarine', 'clarisse', 'clive', 'cordelia', 'corrin-f', 'corrin-m', 'cynthia',
 	'deirdre', 'delthea', 'donnel', 'dorcas', 'draug', 
 	'effie', 'eir', 'eirika', 'eirika-sm', 'eldigan', 'elincia', 'elise', 'eliwood', 'eliwood-la', 'ephraim', 'est', 'ethlyn', 'chrome', 
 	'fae', 'faye', 'felicia', 'finn', 'fir', 'fjorm', 'flora', 'florina', 'frederick', 
@@ -24,13 +25,13 @@ heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'al
 	'hostile-springs-elise', 'hostile-springs-hinoka', 'hostile-springs-ryoma', 'hostile-springs-sakura',
 	'idunn', 'ike', 'innes', 'ishtar', 
 	'jaffar', 'jagen', 'jakob', 'jamke', 'jeorge', 'joshua', 'julia', 'julius',
-	'kaden', 'kagero', 'kana-f', 'kana-m', 'karel', 'karla', 'katarina', 'kaze', 'keaton', 'klein', 'kliff', 
+	'kaden', 'kagero', 'kana-f', 'kana-m', 'karel', 'karla', 'katarina', 'kaze', 'keaton', 'kjelle', 'klein', 'kliff', 
 	'lachesis', 'laegjarn', 'laevatein', 'larachel', 'laslow', 'leanne', 'legault', 
 	'legendary-azura', 'legendary-eirika', 'legendary-ephraim', 'legendary-hector', 'legendary-ike', 'legendary-lucina', 'legendary-lyn', 'legendary-math', 'legendary-robin-f', 'legendary-roy', 'legendary-ryoma', 'legendary-tiki-young',
 	'legion', 'leif', 'lene', 'leo', 'leon', 'lethe', 'lewyn', 'libra', 'lilina', 'lilina-la', 'linde', 'linus', 'lissa', 'lloyd', 'loki', 'lonqu', 'lucina', 'lucius', 'lugh', 'lukas', 'luke', 'lute', 'lyn', 'lyn-la', 
 	'lyon', 
 	'mae', 'maria', 'maribelle', 'marisa', 'marth', 'masked-marth', 'mathilda', 'matthew', 'merric', 'mia', 'micaiah', 'michalis', 'mikoto', 'minerva', 'mist', 'mordecai', 'morgan-f', 'morgan-m', 'myrrh', 
-	'naesala', 'naga', 'nailah', 'nanna', 'narcian', 'navarre', 'nephenee', 
+	'naesala', 'naga', 'nah', 'nailah', 'nanna', 'narcian', 'navarre', 'nephenee', 
 	'new-year-azura', 'new-year-camilla', 'new-year-corrin-m', 'new-year-fjorm', 'new-year-gunnthra', 'new-year-hrid', 'new-year-laegjarn', 'new-year-laevatein', 'new-year-takumi', 
 	'niles', 'nina', 'ninian', 'nino', 'nino-sf', 'nowi', 
 	'oboro', 'odin', 'ogma', 'oliver', 'olivia', 'olivia-yt', 'olwen', 'olwen-wt', 'ophelia', 'oscar', 'owain',
@@ -49,7 +50,7 @@ heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'al
 	'valentines-greil', 'valentines-ike', 'valentines-mist', 'valentines-soren', 'valentines-titania',
 	'walhart', 'winter-cecilia', 'winter-chrom', 'winter-eirika', 'winter-ephraim', 'winter-fae', 'winter-lissa', 'winter-robin', 'winter-tharja', 'wrys', 
 	'xander',
-	'yglr', 'yune',
+	'yarne', 'yglr', 'yune',
 	'zelgius', 'zephiel']
 		
 #heroArray = ['alfonse', 'sharena', 'anna']
