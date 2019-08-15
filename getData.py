@@ -11,7 +11,7 @@ import re
 
 heroArray = ['abel', 'adrift-camilla', 'adrift-corrin-f', 'adrift-corrin-m', 'alfonse', 'alm', 'amelia', 'anna', 'arden', 'ares', 'arthur', 'arvis', 'athena', 'aversa', 'ayra', 'azama', 'azura', 'azura-young'
 	'barst', 'bartre', 'berkut', 'beruka', 'black-knight', 'boey', 'brady',
-        'brave-celica', 'brave-ephraim', 'brave-hector', 'brave-ike', 'brave-lucina', 'brave-lyn', 'brave-roy', 
+    'brave-alm', 'brave-camilla', 'brave-celica', 'brave-eliwood', 'brave-ephraim', 'brave-hector', 'brave-ike', 'brave-lucina', 'brave-lyn', 'brave-micaiah', 'brave-roy', 
 	'brave-veronica', 'bridal-caeda', 'bridal-charlotte', 'bridal-cordelia', 'bridal-fjorm', 'bridal-louise', 'bridal-lyn', 'bridal-ninian', 'bridal-sanaki', 'bridal-sigrun', 'bridal-tanith', 'bridal-tharja',
 	'byleth-f', 'byleth-m',
 	'caeda', 'cain', 'caineghis', 'camilla', 'camus', 'canas', 'catria', 'cecilia', 'celica', 'cherche', 'chrom', 'clair', 'clarine', 'clarisse', 'claude', 'clive',  'cordelia', 'corrin-f', 'corrin-m', 'cynthia',
