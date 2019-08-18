@@ -1,6 +1,9 @@
 # FEH Gamepress Web Scraper
 A basic web scraper script that parses data from fireemblem.gamepress.gg
 
+pip -m venv feh-scraper  
+pip install -r requirements.txt  
+
 Currently scrapes (if applicable):
 - Hero Name
 - Hero Title

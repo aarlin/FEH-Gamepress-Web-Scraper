@@ -38,6 +38,7 @@ def scrapeURL(soup, url):
 		getName(soup)
 		getStats(soup)
 		getSkills(soup)
+		getIVSet(soup)
 		dataArray.append('\n')
 		try:
 			csvWrite(dataArray)
@@ -123,6 +124,29 @@ def getSkills(soup):
 		
 	except Exception as e:
 		log_error("Error during Skills scraping {0} : {1}\n".format(soup, str(e)))
+
+# Get IV set from Hero
+def getIVSet(soup):
+	try:
+		hpIV = soup.find('div', {'class': 'field field--name-field-hp-iv-importance field--type-entity-reference field--label-hidden field__item'})
+		atkIV = soup.find('div', {'class': 'field field--name-field-atk-iv-importance field--type-entity-reference field--label-hidden field__item'})
+		spdIV = soup.find('div', {'class': 'field field--name-field-spd-iv-importance field--type-entity-reference field--label-hidden field__item'})
+		defIV = soup.find('div', {'class': 'field field--name-field-def-iv-importance field--type-entity-reference field--label-hidden field__item'})
+		resIV = soup.find('div', {'class': 'field field--name-field-res-iv-importance field--type-entity-reference field--label-hidden field__item'})
+
+		hpValuation = hpIV.findNext('div', class_=re.compile('field')).get_text().strip()
+		atkValuation = atkIV.findNext('div', class_=re.compile('field')).get_text().strip()
+		spdValuation = spdIV.findNext('div', class_=re.compile('field')).get_text().strip()
+		defValuation = defIV.findNext('div', class_=re.compile('field')).get_text().strip()
+		resValuation = resIV.findNext('div', class_=re.compile('field')).get_text().strip()
+		
+		dataArray.append('HP ' + hpValuation)
+		dataArray.append('ATK ' + atkValuation)
+		dataArray.append('SPD ' + spdValuation)
+		dataArray.append('DEF ' + defValuation)
+		dataArray.append('RES ' + resValuation)
+	except Exception as e:
+		log_error("Error during IV variation scraping {0} : {1}\n".format(soup, str(e)))
 
 def csvWrite(dataArray):
 	# Save data to csv for later retrieval
